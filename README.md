@@ -6,7 +6,7 @@
    
 ## How to run  
 
-- `npm i && npm run start`. 
+- `npm run start`. 
 - Navigate to http://localhost:3001
   
 

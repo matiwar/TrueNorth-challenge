@@ -20,7 +20,9 @@
 .timezone__name {
     font-weight: bold;
     font-size: 20px;
-    line-break: anywhere;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .timezone__remove {

@@ -5,9 +5,10 @@
   "author": "Matias Guerra",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && nodemon index.js",
+    "start-dev": "npm run build && nodemon index.js",
     "build": "webpack --config webpack.config.js",
-    "build-prod": "babel server/. -d dist/server && babel src/. -d dist/src"
+    "build-prod": "babel server/. -d dist/server && babel src/. -d dist/src",
+    "start": "node dist/server/index.js"
   },
   "dependencies": {
     "@babel/register": "^7.8.6",
