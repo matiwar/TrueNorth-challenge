@@ -1,0 +1,60 @@
+.selected-timezones {
+    margin-top: 40px;
+}
+
+.timezone {
+    display: inline-block;
+    border: 1px solid #CCC;
+    background: #FFF;
+    position: relative;
+    padding: 32px 16px;
+    box-sizing: border-box;
+}
+
+.timezone__name, .timezone__date, .timezone__time {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+}
+
+.timezone__name {
+    font-weight: bold;
+    font-size: 20px;
+    line-break: anywhere;
+}
+
+.timezone__remove {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    .timezone {
+        width: 220px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+
+    .timezone:nth-child(3) {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .selected-timezones {
+        flex-direction: column;
+    }
+
+    .timezone {
+        margin-bottom: 16px;
+        width: 100%;
+    }
+
+    .timezone:last-child {
+        margin-bottom: 0;
+    }
+}

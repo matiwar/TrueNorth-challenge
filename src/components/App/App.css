@@ -1,0 +1,19 @@
+body {
+    background: #EEE;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 700px;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        width: 100%;
+    }
+}
