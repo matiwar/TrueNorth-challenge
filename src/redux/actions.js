@@ -1,8 +1,12 @@
 const ADD_TIMEZONE = 'ADD_TIMEZONE';
 const ADD_TIMEZONE_SUCCESS = 'ADD_TIMEZONE_SUCCESS';
+const ADD_TIMEZONE_FAILS = 'ADD_TIMEZONE_FAILS';
 
 const REMOVE_TIMEZONE = 'REMOVE_TIMEZONE';
 const REMOVE_TIMEZONE_SUCCESS = 'REMOVE_TIMEZONE_SUCCESS';
+const REMOVE_TIMEZONE_FAILS = 'REMOVE_TIMEZONE_FAILS';
+
+const RESET_SNACKBAR = 'RESET_SNACKBAR';
 
 function addTimezone(timezone) {
   const request = {
@@ -22,6 +26,9 @@ function addTimezone(timezone) {
         if (response.ok) {
           return response.json();
         } else {
+          dispatch({
+            type: ADD_TIMEZONE_FAILS,
+          });
           throw Error(`Request rejected with status ${response.status}`);
         }
       })
@@ -54,6 +61,10 @@ function removeTimezone(timezone) {
         if (response.ok) {
           return dispatch(removeTimezoneSuccess(timezone))
         } else {
+          dispatch({
+            type: REMOVE_TIMEZONE_FAILS,
+          });
+      
           throw Error(`Request rejected with status ${response.status}`);
         }
       });
@@ -67,4 +78,12 @@ function removeTimezoneSuccess(json) {
   }
 }
 
-export { addTimezone, removeTimezone }
+function resetSnackbar() {
+  return dispatch => {
+    dispatch({
+      type: RESET_SNACKBAR,
+    });
+  };
+}
+
+export { addTimezone, removeTimezone, resetSnackbar }
